@@ -1,18 +1,14 @@
-
 module.exports = (mysql) => {
-    const mysqlConnection = mysql.createConnection({
-        host: 'localhost',
-        user: 'root',
-        password: 'root',
-        database: 'userinfo'
-    });
+  const mysqlConnection = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "root123",
+    database: "userinfo",
+  });
 
-    mysqlConnection.connect(() => {
-        console.log("Connection established.");
-    });
+  mysqlConnection.connect(() => {
+    console.log("Connection established.");
+  });
 
-    // mysqlConnection.query('select * from users', (err, rows, fields) => {
-    //     if (err) throw err;
-    //     console.log(rows); //Returns row data in JSON format
-    // })
-}
+  return mysqlConnection;
+};

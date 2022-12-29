@@ -37,6 +37,11 @@ nav ul li a {
     text-decoration: none;
 }
 
+userlist table,th,td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
 userlist table th,
 td {
     padding: 5px 10px;
