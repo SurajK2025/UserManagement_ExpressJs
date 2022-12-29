@@ -10,7 +10,7 @@ module.exports = (app) => {
 
   app.route("/getUsers").get(userController.getAllUsers);
 
-  app.route("/deleteUser/:id").delete(userController.delete);
+  app.route("/deleteUser/:id").get(userController.deleteUser);
 
   app.route("/login").get((req, res) => res.send("Login Page"));
 };
