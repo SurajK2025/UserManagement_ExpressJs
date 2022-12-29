@@ -13,10 +13,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
-app.get('/', (req, res) => {
-    const path = require('path');
-    res.sendFile(path.join(__dirname, 'public/views/home.html'));
-});
+// app.get('/', (req, res) => {
+//     res.sendFile(path.join(__dirname, 'public/views/home.html'));
+// });
 
 app.listen(port, () => {
     console.log(`Server listening on ${port}...`);
