@@ -2,7 +2,7 @@ module.exports = (mysql) => {
   const mysqlConnection = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "root123",
+    password: "root",
     database: "userinfo",
   });
 
@@ -12,3 +12,4 @@ module.exports = (mysql) => {
 
   return mysqlConnection;
 };
+//ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root'

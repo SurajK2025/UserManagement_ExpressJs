@@ -1,0 +1,48 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+    align-items: center;
+    padding: 1%;
+    font-size: 16px;
+    background-color: blanchedalmond;
+}
+
+nav {
+    width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+}
+
+nav ul li {
+    font-size: 18px;
+    padding: 6px;
+    display: block;
+    border-radius: 4px;
+    background-color: coral;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+}
+
+userlist table,th,td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+userlist table th,
+td {
+    padding: 5px 10px;
+}
