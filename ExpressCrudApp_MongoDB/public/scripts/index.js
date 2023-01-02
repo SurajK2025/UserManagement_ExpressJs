@@ -7,7 +7,7 @@ $(document).ready(() => {
       data.forEach((obj) => {
         rows =
           rows +
-          `<tr><td>${obj.userid}</td><td>${obj.username}</td><td>${obj.course}</td><td>${obj.purchasedate}</td><td><a href="/deleteUser/${obj.userid}">Delete</a></td>`;
+          `<tr><td>${obj._id}</td><td>${obj.username}</td><td>${obj.course}</td><td>${obj.purchaseDate}</td><td><a href="/deleteUser/${obj._id}">Delete</a></td>`;
       });
       $("#userTable").append(rows);
     },
