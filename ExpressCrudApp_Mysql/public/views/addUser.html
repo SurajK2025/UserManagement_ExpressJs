@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/style.css">
-    <title>Home Page</title>
+    <title>Add User</title>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"
         integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-    <script src="../scripts/index.js"></script>
+    <script src="../scripts/addUser.js"></script>
 </head>
 
 <body>
@@ -21,18 +21,15 @@
         </ul>
     </nav>
 
-    <userlist>
-        <table id="userTable">
-            <tr>
-                <th>Userid</th>
-                <th>Username</th>
-                <th>Course</th>
-                <th>Purchase Date</th>
-                <th>Update User</th>
-                <th>Delete User</th>
-            </tr>
-        </table>
-    </userlist>
+    <register>
+        <h2>Register</h2>
+        <form method="POST" action="/adduser" onsubmit="displayData()">
+            <input type="text" name="username" placeholder="Username">
+            <input type="text" name="course" placeholder="Course">
+            <input type="text" name="purchasedate" placeholder="Date" onfocus="(this.type='date')" onblur="if(this.value==''){this.type='text'}"/>
+            <input type="submit" value="Submit">
+        </form>
+    </register>
 </body>
 
 </html>
