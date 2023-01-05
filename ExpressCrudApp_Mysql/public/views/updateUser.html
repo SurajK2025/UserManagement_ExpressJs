@@ -9,6 +9,7 @@
     <title>Update User</title>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"
         integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script type="text/JavaScript" src=" https://MomentJS.com/downloads/moment.js"></script>
     <script src="../scripts/updateUser.js"></script>
 </head>
 
@@ -26,7 +27,8 @@
         <form method="POST" action="/updateUser">
             <input id="username" type="text" name="username" placeholder="Username">
             <input id="course" type="text" name="course" placeholder="Course">
-            <input id="purchasedate" type="text" name="purchasedate" placeholder="Date" onfocus="(this.type='date')" onblur="if(this.value==''){this.type='text'}"/>
+            <input id="purchasedate" type="text" name="purchasedate" placeholder="Date" onfocus="(this.type='date')"
+                onblur="if(this.value==''){this.type='text'}" />
             <input type="submit" value="Submit">
         </form>
     </register>
