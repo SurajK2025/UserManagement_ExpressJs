@@ -10,7 +10,9 @@ module.exports = (app) => {
 
   app.route("/deleteUser/:id").get(userController.deleteUser);
 
-  app.route("/updateUser/:id").get(userController.updateUser);
+  app.route("/updateUser/:id").get(userController.updateUserPage);
+  app.route("/updateUser").get(userController.updateUserFormData);
+  app.route("/updateUser").post(userController.updateUserFormSubmit);
 
   app.route("/login").get((req, res) => res.send("Login Page"));
 };

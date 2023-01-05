@@ -2,7 +2,7 @@ module.exports = (mysql) => {
   const mysqlConnection = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "root123",
+    password: "root",
     database: "userinfo",
   });
 

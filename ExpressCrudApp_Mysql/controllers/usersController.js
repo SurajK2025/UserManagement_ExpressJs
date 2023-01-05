@@ -3,6 +3,8 @@ const mysqlConnection = require("../data/mysqlConnector");
 const connection = mysqlConnection(mysql);
 const path = require('path');
 
+let userId;
+
 exports.getAllUsers = (req, res) => {
   connection.query("select * from users", (err, rows, fields) => {
     if (err) throw err;
@@ -11,30 +13,34 @@ exports.getAllUsers = (req, res) => {
 };
 
 exports.deleteUser = (req, res) => {
-  connection.query(`delete from users where userid=${req.params.id}`, (err, rows, fields) => {
+  connection.query(`delete from users where userid = ${req.params.id}`, (err, rows, fields) => {
     res.redirect('/');
   });
 };
 
-exports.updateUser = (req, res) => {
+exports.updateUserPage = (req, res) => {
+  userId = req.params.id;
   res.sendFile(path.join(__dirname, "../public/views/updateUser.html"));
-  connection.query(`select username, course, purchasedate from users where userid=${req.params.id}`, (err, row, fields) => {
-    console.log(row);
-    res.send(row);
-    //res.redirect('/');
-  });
-
-  // connection.query(`update users set --- where userid=${req.params.id}`, (err, rows, fields) => {
-  //   res.redirect('/');
-  // });
-  
 };
 
-exports.createUser = (req, res) => {
-  const { username, course, purchasedate } = req.body;
-  // console.log(`${username} ${course} ${purchasedate}`);
+exports.updateUserFormData = (req, res) => {
+  connection.query(`select username, course, purchasedate from users where userid = ${userId}`, (err, row, fields) => {
+    console.log(row);
+    res.send(row);
+  });
+}
 
-  connection.query('insert into users set username = ?, course = ?, purchasedate = ?', [username, course, purchasedate], (err, rows) => {
+exports.updateUserFormSubmit = (req, res) => {
+  console.log(req.body);
+  connection.query(`update users set username='${req.body.username}', course='${req.body.course}', purchasedate='${req.body.purchasedate}'  where userid=${userId}`, (err, rows, fields) => {
+    if (err) console.log(err);
+    userId=null;
+    res.redirect('/');
+  });
+}
+
+exports.createUser = (req, res) => {
+  connection.query(`insert into users set username='${req.body.username}', course='${req.body.course}', purchasedate='${req.body.purchasedate}'`, (err, rows) => {
     if (err) console.log(err);
     res.redirect('/');
   });
