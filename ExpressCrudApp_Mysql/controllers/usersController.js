@@ -25,13 +25,11 @@ exports.updateUserPage = (req, res) => {
 
 exports.updateUserFormData = (req, res) => {
   connection.query(`select username, course, purchasedate from users where userid = ${userId}`, (err, row, fields) => {
-    console.log(row);
     res.send(row);
   });
 }
 
 exports.updateUserFormSubmit = (req, res) => {
-  console.log(req.body);
   connection.query(`update users set username='${req.body.username}', course='${req.body.course}', purchasedate='${req.body.purchasedate}'  where userid=${userId}`, (err, rows, fields) => {
     if (err) console.log(err);
     userId=null;
