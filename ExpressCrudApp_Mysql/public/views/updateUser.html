@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/style.css">
-    <title>Add User</title>
+    <title>Update User</title>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"
         integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-    <script src="../scripts/addUser.js"></script>
+    <script src="../scripts/updateUser.js"></script>
 </head>
 
 <body>
@@ -24,9 +24,9 @@
     <register>
         <h2>Register</h2>
         <form method="POST" action="/adduser">
-            <input type="text" name="username" placeholder="Username">
-            <input type="text" name="course" placeholder="Course">
-            <input type="text" name="purchasedate" placeholder="Date" onfocus="(this.type='date')" onblur="if(this.value==''){this.type='text'}"/>
+            <input id="username" type="text" name="username" placeholder="Username">
+            <input id="course" type="text" name="course" placeholder="Course">
+            <input id="purchasedate" type="text" name="purchasedate" placeholder="Date" onfocus="(this.type='date')" onblur="if(this.value==''){this.type='text'}"/>
             <input type="submit" value="Submit">
         </form>
     </register>
